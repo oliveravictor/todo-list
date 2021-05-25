@@ -1,15 +1,18 @@
+import shortid from "short-id";
 import { Form, Button } from "react-bootstrap";
 
 const Taskform = ({ addTask }) => {
   const handleAddTask = (e) => {
-    console.log("handle task");
     e.preventDefault();
 
     const [taskName, taskDescription] = e.target.elements;
     addTask({
-      nameTask: taskName.value,
-      descriptionTask: taskDescription.value,
+      id: shortid.generate(),
+      name: taskName.value.trim(),
+      description: taskDescription.value.trim(),
     });
+
+    e.target.reset();
   };
 
   return (
@@ -24,7 +27,12 @@ const Taskform = ({ addTask }) => {
       </Form.Group>
       <Form.Group>
         <Form.Label>Description of task</Form.Label>
-        <Form.Control as="textarea" name="taskDescription" rows={2} />
+        <Form.Control
+          as="textarea"
+          name="taskDescription"
+          rows={2}
+          placeholder="Write task"
+        />
       </Form.Group>
       <Button type="submit">Add task</Button>
     </Form>
