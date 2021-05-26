@@ -12,6 +12,11 @@ function App() {
     setTasks([...tasks, task]);
   };
 
+  const deleteTask = (id) => {
+    const selectedTask = tasks.filter((task) => task.id !== id);
+    setTasks(selectedTask);
+  };
+
   return (
     <Container>
       <Header />
@@ -20,7 +25,7 @@ function App() {
           <Taskform addTask={addTask} />
         </Col>
         <Col size={3}>
-          <Tasks tasks={tasks} />
+          <Tasks tasks={tasks} deleteTask={deleteTask} />
         </Col>
       </Row>
     </Container>
