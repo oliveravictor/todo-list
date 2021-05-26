@@ -17,24 +17,28 @@ const Taskform = ({ addTask }) => {
 
   return (
     <Form onSubmit={handleAddTask}>
-      <h3>Set tasks</h3>
+      <h5>Set tasks</h5>
       <Form.Group>
         <Form.Control
           type="text"
           name="taskName"
-          placeholder="Whats you have to do"
+          placeholder="¿Whats you have to do?"
+          required="required"
         />
       </Form.Group>
       <Form.Group>
-        <Form.Label>Description of task</Form.Label>
+        <h5>Description of the task</h5>
         <Form.Control
           as="textarea"
           name="taskDescription"
-          rows={2}
+          required="required"
+          rows={1}
           placeholder="Write task"
         />
       </Form.Group>
-      <Button type="submit">Add task</Button>
+      <Button type="submit" variant={"success"} className={"btn btn-block"}>
+        Add Task
+      </Button>
     </Form>
   );
 };

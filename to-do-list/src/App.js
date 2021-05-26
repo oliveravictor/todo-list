@@ -20,11 +20,14 @@ function App() {
   return (
     <Container>
       <Header />
-      <Row>
-        <Col size={4}>
+      <Row className={"d-flex justify-content-center"}>
+        <Col size={4} md={7}>
           <Taskform addTask={addTask} />
         </Col>
-        <Col size={3}>
+      </Row>
+      <br />
+      <Row className={"d-flex justify-content-center"}>
+        <Col size={3} md={7}>
           <Tasks tasks={tasks} deleteTask={deleteTask} />
         </Col>
       </Row>

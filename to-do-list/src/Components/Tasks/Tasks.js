@@ -20,7 +20,13 @@ const Tasks = ({ tasks, deleteTask }) => {
             <td>{task.name}</td>
             <td>{task.description}</td>
             <td onClick={() => removeTask(task.id)}>
-              <FaTimes style={{ cursor: "pointer", color: "#962d2d" }} />
+              <FaTimes
+                style={{
+                  cursor: "pointer",
+                  color: "#962d2d",
+                  fontSize: "18px",
+                }}
+              />
             </td>
           </tr>
         ))}
